@@ -51,6 +51,11 @@ class App
             );
             $this->db->query($q);
 
+        } else if (isset($_POST['import_data'])) {
+
+            $q = base64_decode($_POST['import_data']);
+            $this->db->query($q);
+
         }
     }
 
