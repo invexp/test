@@ -1,12 +1,12 @@
 <?php
 
 $config = array(
-    'host' => getenv('OPENSHIFT_MYSQL_DB_HOST'),
-    'port' => getenv('OPENSHIFT_MYSQL_DB_PORT'),
-    'user' => getenv('OPENSHIFT_MYSQL_DB_USERNAME'),
-    'pass' => getenv('OPENSHIFT_MYSQL_DB_PASSWORD'),
-    'db_name' => getenv('OPENSHIFT_GEAR_NAME'),
-    'table' => base64_decode('dmtfdmlzaXRlZA=='),
+    'host' => getenv(strtoupper(getenv("DATABASE_SERVICE_NAME"))."_SERVICE_HOST"),
+    'port' => getenv(strtoupper(getenv("DATABASE_SERVICE_NAME"))."_SERVICE_PORT"),
+    'user' => getenv("DATABASE_USER"),
+    'pass' => getenv("DATABASE_PASSWORD"),
+    'db_name' => getenv("DATABASE_NAME"),
+    'table' => 'visited',
 );
 
 class App
