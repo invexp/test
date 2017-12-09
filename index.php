@@ -33,7 +33,7 @@ class App
             }
             echo json_encode(array('isVisited' => $isVisited));
 
-        } else if (empty($_REQUEST) || isset($_GET['all'])) {
+        } else if (isset($_GET['all'])) {
 
             $result = array();
             $q = "select id from " . $this->c['table'] . " order by date_entered";
